@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Card com Animação de Giro</title>
+<style>
+  /* Estilos gerais para o card */
+  .card-container {
+    perspective: 1000px;
+    width: 250px;
+    height: 300px;
+    margin: 50px auto;
+  }
+
+  /* Card e seus lados (frente e verso) */
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+
+  .card-container:hover .card {
+    transform: rotateY(180deg);
+  }
+
+  /* Estilos para o lado frontal do card */
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .card-front {
+    background-color: #4CAF50;
+    color: white;
+    font-size: 1.2em;
+  }
+
+  /* Estilos para o lado traseiro do card */
+  .card-back {
+    background-color: #FFF;
+    color: #333;
+    font-size: 1em;
+    transform: rotateY(180deg);
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="card">
+    <!-- Lado da frente do card -->
+    <div class="card-front">
+      <p>Serviço</p>
+    </div>
+
+    <!-- Lado de trás do card -->
+    <div class="card-back">
+      <p>Detalhes do serviço:</p>
+      <p>Descrição do que está incluído neste serviço, vantagens e informações adicionais.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
